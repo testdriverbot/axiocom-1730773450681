@@ -1,0 +1,26 @@
+version: 4.0.80
+steps:
+  - prompt: Click "Try it Free".
+    commands:
+      - command: hover-text
+        text: Try it Free
+        description: button to start a free trial
+        action: click
+  - prompt: Assert that a sign-up or lead capture form appears.
+    commands:
+      - command: assert
+        expect: a sign-up or lead capture form appears
+  - prompt: Complete the form with test data.
+    commands:
+      - command: hover-text
+        text: First Name
+        description: field for entering the first name
+        action: click
+      - command: type
+        text: TestName
+  - prompt: >-
+      Assert that a confirmation or success message shows.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: a confirmation or success message shows
