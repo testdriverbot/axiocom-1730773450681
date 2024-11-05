@@ -1,0 +1,56 @@
+version: 4.0.80
+steps:
+  - prompt: Click "Login".
+    commands:
+      - command: hover-text
+        text: Login
+        description: login button in the header
+        action: click
+  - prompt: Assert that the login form appears.
+    commands:
+      - command: assert
+        expect: the login form with "Email address" field is visible
+  - prompt: Attempt login with invalid credentials.
+    commands:
+      - command: hover-text
+        text: Email address
+        description: email input field
+        action: click
+      - command: type
+        text: invalid@example.com
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: wrongpassword
+      - command: hover-text
+        text: Sign In
+        description: sign in button
+        action: click
+  - prompt: Assert that an error message is shown.
+    commands:
+      - command: assert
+        expect: the error message "Invalid username or password" is visible
+  - prompt: >-
+      Attempt login with valid credentials and assert successful login.  # Use
+      the content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Email address
+        description: email input field
+        action: click
+      - command: type
+        text: valid@example.com
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: correctpassword
+      - command: hover-text
+        text: Sign In
+        description: sign in button
+        action: click
+      - command: assert
+        expect: successful login indicator is visible
