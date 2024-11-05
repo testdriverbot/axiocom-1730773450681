@@ -1,0 +1,14 @@
+version: 4.0.80
+steps:
+  - prompt: Ensure the webpage loads completely.
+    commands:
+      - command: scroll
+        direction: down
+  - prompt: Ensure the webpage loads completely.
+    commands:
+      - command: scroll
+        direction: down
+  - prompt: Ensure the webpage loads completely.
+    commands:
+      - command: scroll
+        direction: down
