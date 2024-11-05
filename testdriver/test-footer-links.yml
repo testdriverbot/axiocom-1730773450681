@@ -1,0 +1,17 @@
+version: 4.0.80
+steps:
+  - prompt: Scroll to the footer of the page.
+    commands:
+      - command: scroll
+        direction: down
+  - prompt: Scroll to the footer of the page.
+    commands:
+      - command: scroll-until-text
+        text: Contact Us
+        direction: down
+  - prompt: 'Click on a footer link  # Use the content of the file from the environment'
+    commands:
+      - command: hover-text
+        text: Contact Us
+        description: link in the footer
+        action: click
