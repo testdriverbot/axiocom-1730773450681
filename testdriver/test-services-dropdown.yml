@@ -1,0 +1,24 @@
+version: 4.0.80
+steps:
+  - prompt: Hover over "Services".
+    commands:
+      - command: hover-text
+        text: Services
+        description: link in the header
+        action: hover
+  - prompt: Click on one of the services.
+    commands:
+      - command: hover-text
+        text: PROFESSIONAL SERVICES
+        description: service option under Services
+        action: click
+  - prompt: Assert that the service page opens.
+    commands:
+      - command: assert
+        expect: Axio Services
+  - prompt: >-
+      Validate the service details are correct.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: A proven process for measurable, repeatable results
