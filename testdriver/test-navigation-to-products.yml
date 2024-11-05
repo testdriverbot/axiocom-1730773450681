@@ -1,0 +1,24 @@
+version: 4.0.80
+steps:
+  - prompt: Hover over "Axio360 Platform".
+    commands:
+      - command: hover-text
+        text: AXIO360 PLATFORM
+        description: main menu item
+        action: hover
+  - prompt: Click on a product or service.
+    commands:
+      - command: hover-text
+        text: CYBER RISK QUANTIFICATION
+        description: product or service option
+        action: click
+  - prompt: Assert that the product page loads.
+    commands:
+      - command: assert
+        expect: Cyber Risk Quantification (CRQ) is visible on the page
+  - prompt: >-
+      Verify product information is displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: Cyber Risk Quantification (CRQ) is visible on the page
