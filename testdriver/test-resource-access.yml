@@ -1,0 +1,16 @@
+version: 4.0.80
+steps:
+  - prompt: Hover over "Resources".
+    commands:
+      - command: hover-text
+        text: Resources
+        description: link in the header
+        action: hover
+  - prompt: >-
+      Click on a resource link  # Use the content of the file from the
+      environment
+    commands:
+      - command: hover-text
+        text: Explore the Axio Content Library
+        description: link under Resources
+        action: click
